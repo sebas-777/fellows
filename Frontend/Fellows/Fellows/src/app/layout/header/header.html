@@ -1,4 +1,4 @@
-<header class="bg-[#0055a5] text-white">
+<header class="bg-[#0055a5] text-white relative">
     <!--version movil(hasta 768px)-->
     <div class="flex items-center justify-between p-4 md:hidden">
         <h1 class="text-xl font-bold">Fellows</h1>
@@ -8,14 +8,34 @@
     </div>
     <!--version desktop(desde 768px)-->
     <div class="hidden md:flex items-center justify-between p-4">
-     <div class="flex items-center space-x-8">
+     <div class="flex items-center space-x-2">
         <h1 class="text-2xl font-bold">Fellows</h1>
      </div>
-        <div class="flex items-center space-x-6" >
+        <div class="flex items-center space-x-2" >
             <button class="hover:opacity-80">🔑 Iniciar Seccion </button>
             <button class="hover:opacity-80">👤 Suscribirse</button>
             
         </div>
     </div>
+
+    <!-- Menu movil -->
+     @if (menuOpen) {
+        <div class="md:hidden bg-white shadow-lg absolute w-40 top-full right-0 z-50">
+            <nav class="flex flex-col p-4 space-y-3">
+                <a  routerLink="/iniciar-sesion" 
+                  class="text-gray-800 hover:text-gray-600"
+                  (click)="menuOpen = false">
+                  🔑 Iniciar Seccion
+                </a>
+                <a routerLink="/suscribirse" 
+                class="text-gray-800 hover:text-gray-600"
+                (click)="menuOpen = false">
+                👤 Suscribirse
+                </a>
+
+            </nav>
+            
+        </div>
+     }
 
 </header>
